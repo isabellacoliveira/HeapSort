@@ -61,21 +61,32 @@ def siftDown(lst, i, upper):
         # verificar se o filho direito existe
         elif r < upper: 
             if lst[r] > lst[i]:
+                # trocar os indices 
                 swap(lst, i, r)
+                # setar o pai novo 
                 i = r
             else: break
+        # se nao houver filhos, nao ha peneiracao para fazer pois nao ha filhos para trocar com outro 
         else: break
 
 # vamos definir uma funcao que tenha o heapsort como entrada e que o retorne
 def heapsort(lst):
+    # pilha maxima 
+    # j no comprimento do intervalo 
+    # esse indice se refere ao ultimo pai 
     for j in range((len(lst)-2)//2, -1, -1):
+        #  acumula nossa lista 
          siftDown(lst, j, len(lst)) 
 
+    # classificacao 
+    # quando paramos no indice 0, todo o resto da lista ja esta classificado
     for end in range(len(lst)-1, 0, -1):
          swap(lst, 0, end)
+        #  aqui nao queremos considerar nenhum item no nosso indice end ate o final da lista 
          siftDown(lst, 0, end)
 
-# lst = [5, 16, 18, 14, 20, 1, 26]
+lst = [5, 16, 18, 14, 20, 1, 26]
+# crescente
 lst = [i for i in range(10, 1, -1)]
 heapsort(lst)
 print(lst)
