@@ -27,7 +27,7 @@ def siftDown(lst, i, upper):
         # upper: limite superior da nossa lista que pretendemos considerar como uma pilha 
         # pode estar entre 0 e o comprimento da lista 
         # se tivermos dois filhos entao: 
-        if max(l, r) < upper:
+        if max(l, r) < upper: # pega o 1 e o 26
                 # vamos conferir se o pai é o maior que ambos os filhos 
                 # se for verdade nao devemos fazer mais nada aqui 
                 # podemos so dizer break, pois caso seja menor, nao havera troca
@@ -74,7 +74,7 @@ def heapsort(lst):
     # pilha maxima 
     # j no comprimento do intervalo 
     # esse indice se refere ao ultimo pai 
-    for j in range((len(lst)-2)//2, -1, -1):
+    for j in range((len(lst)-2)//2, -1, -1): # 5 18 26 (2 corresponde ao 26)
         #  acumula nossa lista 
          siftDown(lst, j, len(lst)) 
 

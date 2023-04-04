@@ -1,11 +1,11 @@
 def swap(lst, i, j):
     lst[i], lst[j] = lst[j], lst[i]
 
-def siftDown(lst, i, upper):
+def siftDown(lst, i, upper): 
     while(True): 
-        l, r = i*2+1, i*2+2
-        if max(l, r) < upper:
-                if lst[i] >= max(lst[l], lst[r]): break
+        l, r = i*2+1, i*2+2 
+        if max(l, r) < upper: 
+                if lst[i] >= max(lst[l], lst[r]): break 
                 elif lst[l] > lst[r]: 
                     swap(lst, i, l)
                     i = l   
@@ -25,7 +25,7 @@ def siftDown(lst, i, upper):
         else: break
 
 def heapsort(lst):
-    for j in range((len(lst)-2)//2, -1, -1):
+    for j in range((len(lst)-2)//2, -1, -1): 
          siftDown(lst, j, len(lst)) 
 
     for end in range(len(lst)-1, 0, -1):
@@ -33,6 +33,5 @@ def heapsort(lst):
          siftDown(lst, 0, end)
 
 lst = [5, 16, 18, 14, 20, 1, 26]
-lst = [i for i in range(10, 1, -1)]
 heapsort(lst)
 print(lst)
